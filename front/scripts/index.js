@@ -1,14 +1,12 @@
-// Selector for the movies container
 const moviesContainer = document.getElementById("movies-container");
 
-// Function to render movies
-function renderMovies(movies) {
-    // Clear previous content if needed
+
+const renderMovies = (movies) => {
+    
     moviesContainer.innerHTML = "";
 
-    // Map over the movies array and create HTML elements
     const movieElements = movies.map((movie) => {
-        // Create container div
+  
         const card = document.createElement("div");
         card.classList.add("movie-card");
 
@@ -19,7 +17,6 @@ function renderMovies(movies) {
 
         // Create Title
         const title = document.createElement("h3");
-        // Link title to a potential detail page (optional, or just text)
         const titleLink = document.createElement("a");
         titleLink.href = "#"; // Placeholder link
         titleLink.textContent = movie.title;
@@ -27,7 +24,7 @@ function renderMovies(movies) {
 
         // Create Info (Year + Director + Rate)
         const info = document.createElement("p");
-        info.innerHTML = `<strong>${movie.year}</strong> | ${movie.director} <br> Rating: ⭐ ${movie.rate}`;
+        info.innerHTML = `<strong>${movie.year}</strong> | ${movie.director} <br> Rating: ⭐ ${movie.rate} <br> Duration: ${movie.duration} <br> Genre: ${movie.genre.join(", ")}`;
 
         // Append elements to card
         card.appendChild(img);
@@ -41,5 +38,5 @@ function renderMovies(movies) {
     movieElements.forEach((card) => moviesContainer.appendChild(card));
 }
 
-// Call the function with tempData
+
 renderMovies(tempData);
