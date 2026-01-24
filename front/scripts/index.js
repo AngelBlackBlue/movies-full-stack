@@ -34,7 +34,7 @@ const renderMovies = (movies) => {
         return card;
     });
 
-    // Append all cards to the container
+  
     movieElements.forEach((card) => moviesContainer.appendChild(card));
 }
 
