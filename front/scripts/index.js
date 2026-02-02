@@ -1,8 +1,12 @@
 const moviesContainer = document.getElementById("movies-container");
 
+$.get("https://students-api.up.railway.app/movies", (data) => {
+    renderMovies(data);
+});
+
 
 const renderMovies = (movies) => {
-    
+   
     moviesContainer.innerHTML = "";
 
     const movieElements = movies.map((movie) => {
@@ -39,4 +43,4 @@ const renderMovies = (movies) => {
 }
 
 
-renderMovies(tempData);
+// renderMovies(tempData);
